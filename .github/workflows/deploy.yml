@@ -19,10 +19,10 @@ jobs:
       - name: List built files
         run: ls
 
-      - name: Copy JAR to VM and deploy
-        uses: appleboy/ssh-action@v0.1.7
+      - name: Copy JAR and deploy script to VM
+        uses: appleboy/scp-action@v0.1.4
         with:
-          host: host.docker.internal   # or the actual VM IP
+          host: host.docker.internal
           port: 2222
           username: ${{ secrets.SSH_USER }}
           key: ${{ secrets.SSH_KEY }}
@@ -39,6 +39,6 @@ jobs:
           username: ${{ secrets.SSH_USER }}
           key: ${{ secrets.SSH_KEY }}
           script: |
-             cd /opt/deploy/flink
-             chmod +x deploy.sh
-             ./deploy.sh uat blue
+            cd /opt/deploy/flink
+            chmod +x deploy.sh
+            ./deploy.sh uat blue
