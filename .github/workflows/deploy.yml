@@ -7,7 +7,7 @@ on:
 
 jobs:
   build-and-deploy:
-    runs-on: ubuntu-latest
+    runs-on: self-hosted
 
     steps:
       - name: Checkout code
@@ -19,7 +19,7 @@ jobs:
       - name: Copy JAR to VM and deploy
         uses: appleboy/ssh-action@v0.1.7
         with:
-          host: ${{ secrets.UAT_VM_HOST }}
+          host: 127.0.0.1
           port: 2222
           username: ${{ secrets.SSH_USER }}
           key: ${{ secrets.SSH_KEY }}
