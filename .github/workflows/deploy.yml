@@ -26,9 +26,17 @@ jobs:
           port: 2222
           username: ${{ secrets.SSH_USER }}
           key: ${{ secrets.SSH_KEY }}
+          source: "./target/all-1.2.2.jar"
+          target: "/opt/deploy/flink/"
+
+      - name: Run deploy script on VM
+        uses: appleboy/ssh-action@v0.1.7
+        with:
+          host: host.docker.internal
+          port: 2222
+          username: ${{ secrets.SSH_USER }}
+          key: ${{ secrets.SSH_KEY }}
           script: |
-             mkdir -p /opt/deploy/flink
-             cp ./target/all-1.2.2.jar /opt/deploy/flink/
              cd /opt/deploy/flink
              chmod +x ci/deploy.sh
              ./ci/deploy.sh uat blue
