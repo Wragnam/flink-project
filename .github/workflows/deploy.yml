@@ -13,14 +13,12 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v3
 
-      - name: Build Flink JAR
-        uses: actions/setup-java@v3
+      - name: Build Flink JAR in Docker
+        uses: addnab/docker-run-action@v3
         with:
-          java-version: '11'
-          distribution: 'temurin'
-
-      - name: Build with Maven
-        run: mvn clean package
+          image: maven:3.9.6-eclipse-temurin-11
+          options: -v ${{ github.workspace }}:/workspace -w /workspace
+          run: mvn clean package
 
       - name: Copy JAR to VM and deploy
         uses: appleboy/ssh-action@v0.1.7
