@@ -20,6 +20,9 @@ jobs:
           options: -v ${{ github.workspace }}:/workspace -w /workspace
           run: mvn clean package
 
+      - name: List built files
+        run: ls -l ./build/libs
+
       - name: Copy JAR to VM and deploy
         uses: appleboy/ssh-action@v0.1.7
         with:
@@ -30,6 +33,7 @@ jobs:
           script: |
             mkdir -p /opt/deploy/flink
             cp ./build/libs/all-1.2.2.jar /opt/deploy/flink/
+            cp -r ./ci /opt/deploy/flink/
             cd /opt/deploy/flink
             chmod +x ci/deploy.sh
             ./ci/deploy.sh uat blue
