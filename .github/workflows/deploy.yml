@@ -13,11 +13,11 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v3
 
-      - name: Build Flink JAR in Docker
+      - name: Build Flink JAR
         run: mvn clean package
 
-      - name: List built files
-        run: ls
+      - name: List files
+        run: ls -l ./target ./cli
 
       - name: Copy JAR and deploy script to VM
         uses: appleboy/scp-action@v0.1.4
@@ -29,7 +29,7 @@ jobs:
           source: |
             ./target/all-1.2.2.jar
             ./cli/deploy.sh
-          target: "/opt/deploy/flink/"
+          target: /opt/deploy/flink/
 
       - name: Run deploy script on VM
         uses: appleboy/ssh-action@v0.1.7
