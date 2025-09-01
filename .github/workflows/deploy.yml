@@ -40,5 +40,5 @@ jobs:
           key: ${{ secrets.SSH_KEY }}
           script: |
              cd /opt/deploy/flink
-             chmod +x ci/deploy.sh
-             ./ci/deploy.sh uat blue
+             chmod +x deploy.sh
+             ./deploy.sh uat blue
