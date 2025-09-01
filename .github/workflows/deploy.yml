@@ -23,7 +23,7 @@ jobs:
       - name: Copy JAR to VM and deploy
         uses: appleboy/ssh-action@v0.1.7
         with:
-          host: 127.0.0.1
+          host: host.docker.internal
           port: 2222
           username: ${{ secrets.SSH_USER }}
           key: ${{ secrets.SSH_KEY }}
