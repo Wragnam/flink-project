@@ -17,7 +17,7 @@ jobs:
         uses: addnab/docker-run-action@v3
         with:
           image: maven:3.9.6-eclipse-temurin-11
-          options: -v ${{ github.workspace }}:/workspace -w /workspace
+          options: -v "${{ github.workspace }}:/workspace" -w /workspace
           run: mvn clean package
 
       - name: Copy JAR to VM and deploy
