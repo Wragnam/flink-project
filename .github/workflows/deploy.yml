@@ -26,7 +26,9 @@ jobs:
           port: 2222
           username: ${{ secrets.SSH_USER }}
           key: ${{ secrets.SSH_KEY }}
-          source: "./target/all-1.2.2.jar"
+          source: |
+            ./target/all-1.2.2.jar
+            ./cli/deploy.sh
           target: "/opt/deploy/flink/"
 
       - name: Run deploy script on VM
