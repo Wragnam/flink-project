@@ -28,7 +28,7 @@ jobs:
           key: ${{ secrets.SSH_KEY }}
           source: |
             ./target/all-1.2.2.jar
-            ./cli/deploy.sh
+            ./ci/deploy.sh
           target: /opt/deploy/flink/
 
       - name: Run deploy script on VM
