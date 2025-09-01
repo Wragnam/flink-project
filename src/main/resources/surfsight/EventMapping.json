@@ -1,0 +1,81 @@
+{
+  "source": "SURFSIGHT",
+  "events": [
+    {
+      "original": "ACCELERATION",
+      "new_type": "ACCELERATION"
+    },
+    {
+      "original": "ACCIDENT",
+      "new_type": "ACCIDENT"
+    },
+    {
+      "original": "accident",
+      "new_type": "ACCIDENT"
+    },
+    {
+      "original": "BUTTON",
+      "new_type": "PANIC"
+    },
+    {
+      "original": "CELLPHONEUSE",
+      "new_type": "DRIVER_PHONE_USE"
+    },
+    {
+      "original": "COVER_OPENED",
+      "new_type": "COVER_OPENED"
+    },
+    {
+      "original": "DE_ACCELERATION",
+      "new_type": "DEACCELERATION"
+    },
+    {
+      "original": "DISTRACTED_DRIVING",
+      "new_type": "DRIVER_DISTRACTED"
+    },
+    {
+      "original": "DRIVERUNBELTED",
+      "new_type": "DRIVER_UNBELTED"
+    },
+    {
+      "original": "FOODDRINK",
+      "new_type": "FOOD_DRINK"
+    },
+    {
+      "original": "GSENSOR_HIGH",
+      "new_type": "IMPACT_HIGH"
+    },
+    {
+      "original": "GSENSOR_REGULAR",
+      "new_type": "IMPACT_REGULAR"
+    },
+    {
+      "original": "JOLT",
+      "new_type": "JOLT"
+    },
+    {
+      "original": "OBSTRUCTION",
+      "new_type": "OBSTRUCTION"
+    },
+    {
+      "original": "POWER_DISCONNECT_ALARM",
+      "new_type": "POWER_DISCONNECT"
+    },
+    {
+      "original": "power_disconnect_alarm",
+      "new_type": "POWER_DISCONNECT"
+    },
+    {
+      "original": "SD_CARD_FORMATTED",
+      "new_type": "SD_CARD_FORMATTED"
+    },
+    {
+      "original": "SHARP_TURN_LEFT",
+      "new_type": "SHARP_LEFT"
+    },
+    {
+      "original": "SHARP_TURN_RIGHT",
+      "new_type": "SHARP_RIGHT"
+    }
+  ]
+}

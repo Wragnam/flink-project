@@ -1,0 +1,25 @@
+{
+  "source": "BLACKBERRYRADAR",
+  "events": [
+    {
+      "original": "DOOR_CLOSED",
+      "new_type": "DOOR_CLOSED"
+    },
+    {
+      "original": "DOOR_OPEN",
+      "new_type": "DOOR_OPENED"
+    },
+    {
+      "original": "LOW_BATTERY",
+      "new_type": "BATTERY_LOW"
+    },
+    {
+      "original": "LOW_BATTERY_VOLTAGE",
+      "new_type": "BATTERY_VOLTAGE_LOW"
+    },
+    {
+      "original": "TAMPER",
+      "new_type": "TAMPER"
+    }
+  ]
+}

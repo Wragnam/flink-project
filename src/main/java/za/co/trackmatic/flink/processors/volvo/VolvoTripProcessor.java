@@ -1,0 +1,70 @@
+package za.co.trackmatic.flink.processors.volvo;
+
+import org.apache.flink.api.common.eventtime.WatermarkStrategy;
+import org.apache.flink.api.java.functions.KeySelector;
+import org.apache.flink.connector.kafka.sink.KafkaSink;
+import org.apache.flink.connector.kafka.source.KafkaSource;
+import org.apache.flink.streaming.api.environment.StreamExecutionEnvironment;
+import za.co.trackmatic.flink.Utils.Utils;
+import za.co.trackmatic.flink.flatmaps.multipletps.UniversalTripProcessorFlatmap;
+import za.co.trackmatic.flink.models.Config;
+import za.co.trackmatic.flink.models.MultipleProviders.RawTripData;
+import za.co.trackmatic.flink.models.MultipleProviders.TripAndEventMappers;
+import za.co.trackmatic.flink.models.trips.TripTopicResponse;
+import za.co.trackmatic.flink.models.volvo.VolvoLiveposRaw;
+import za.co.trackmatic.flink.serde.GenericDeserializer;
+import za.co.trackmatic.flink.serde.GenericSerializer;
+
+/**
+ * Processor class for handling raw Volvo live position data,
+ * transforming it into trip-related events,
+ * and publishing those events to a Kafka topic.
+ */
+public class VolvoTripProcessor {
+
+    /** Default constructor */
+    public VolvoTripProcessor() {}
+
+    /**
+     * Main processing method that:
+     * - Reads raw Volvo live position data from Kafka,
+     * - Maps the raw data to internal RawTripData objects,
+     * - Keys the stream by organization ID,
+     * - Applies trip processing transformations,
+     * - Sends processed trip data to a Kafka sink.
+     *
+     * @param config Configuration object containing Kafka source and sink details,
+     *               Flink job parameters, and other settings.
+     * @throws Exception If an error occurs during the Flink job execution.
+     */
+    public void process(Config config) throws Exception {
+        // Create a Flink execution environment
+        try (StreamExecutionEnvironment env = StreamExecutionEnvironment.getExecutionEnvironment()) {
+            // Set generic stream options
+            Utils.setGenericDataStreamOptions(env, 60000, 10000);
+
+            // Configure Kafka source and deserializer for VolvoLiveposRaw
+            Config.KafkaSourceSink source = config.getKafka().getSource();
+            GenericDeserializer<VolvoLiveposRaw> deserializer = new GenericDeserializer<>(VolvoLiveposRaw.class);
+            KafkaSource<VolvoLiveposRaw> input = Utils.createKafkaSource(source, deserializer);
+
+            // Configure Kafka sink and serializer for TripTopicResponse
+            Config.KafkaSourceSink sink = config.getKafka().getSink();
+            GenericSerializer<TripTopicResponse> serializer = new GenericSerializer<>(sink.getTopics());
+            KafkaSink<TripTopicResponse> output = Utils.createKafkaSink(sink, serializer);
+
+            // Read data from the Kafka source, apply transformations, and write to Kafka sink
+            env.fromSource(input, WatermarkStrategy.noWatermarks(), "volvo:data-raw->trip")
+                    .map(raw -> TripAndEventMappers.fromVolvo(raw).build())
+                    // Key the stream by the organization ID from the raw data
+                    .keyBy((KeySelector<RawTripData, String>) rawData -> rawData.getMetadata().getOrgId())
+                    // Apply the UniversalTripProcessorFlatmap transformation
+                    .flatMap(new UniversalTripProcessorFlatmap(config))
+                    // Sink the processed trip data to Kafka
+                    .sinkTo(output);
+
+            // Execute the Flink job with the provided job name from the config
+            env.execute(config.getFlinkJobName());
+        }
+    }
+}

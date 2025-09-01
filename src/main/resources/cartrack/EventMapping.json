@@ -1,0 +1,101 @@
+{
+  "source": "CARTRACK",
+  "events": [
+    {
+      "original": "DOOR_1_OPEN",
+      "new_type": "DOOR_OPENED"
+    },
+    {
+      "original": "DOOR_2_OPEN",
+      "new_type": "DOOR_OPENED"
+    },
+    {
+      "original": "DOOR_3_OPEN",
+      "new_type": "DOOR_OPENED"
+    },
+    {
+      "original": "DOOR_4_OPEN",
+      "new_type": "DOOR_OPENED"
+    },
+    {
+      "original": "DOOR_1_CLOSE",
+      "new_type": "DOOR_CLOSED"
+    },
+    {
+      "original": "DOOR_2_CLOSE",
+      "new_type": "DOOR_CLOSED"
+    },
+    {
+      "original": "DOOR_3_CLOSE",
+      "new_type": "DOOR_CLOSED"
+    },
+    {
+      "original": "DOOR_4_CLOSE",
+      "new_type": "DOOR_CLOSED"
+    },
+    {
+      "original": "BATT_LOW",
+      "new_type": "BATTERY_LOW"
+    },
+    {
+      "original": "SPEEDING_START",
+      "new_type": "SPEEDING"
+    },
+    {
+      "original": "PHONE_DETECTED",
+      "new_type": "DRIVER_PHONE_USE"
+    },
+    {
+      "original": "SEATBELT_DRIVER_OFF",
+      "new_type": "DRIVER_UNBELTED"
+    },
+    {
+      "original": "NO_SEATBELT_DETECTED",
+      "new_type": "DRIVER_UNBELTED"
+    },
+    {
+      "original": "PEDESTRIAN_COLLISION_WARNING",
+      "new_type": "ACCIDENT"
+    },
+    {
+      "original": "URBAN_FORWARD_COLLISION_WARNING",
+      "new_type": "ACCIDENT"
+    },
+    {
+      "original": "FORWARD_COLLISION_WARNING",
+      "new_type": "ACCIDENT"
+    },
+    {
+      "original": "HARSH_ACCELERATION",
+      "new_type": "ACCELERATION"
+    },
+    {
+      "original": "EYE_CLOSED_DETECTED",
+      "new_type": "FALLING_ASLEEP"
+    },
+    {
+      "original": "YAWNING_DETECTED",
+      "new_type": "FALLING_ASLEEP"
+    },
+    {
+      "original": "FATIGUE_DETECTED",
+      "new_type": "FALLING_ASLEEP"
+    },
+    {
+      "original": "PANIC_EVENT",
+      "new_type": "Panic"
+    },
+    {
+      "original": "HARSH_BRAKING",
+      "new_type": "DEACCELERATION"
+    },
+    {
+      "original": "DISTRACTION_DETECTED",
+      "new_type": "DRIVER_DISTRACTED"
+    },
+    {
+      "original": "CAMERA_COVERED",
+      "new_type": "OBSTRUCTION"
+    }
+  ]
+}

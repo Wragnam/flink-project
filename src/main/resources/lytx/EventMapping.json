@@ -1,0 +1,133 @@
+{
+  "source": "LYTX",
+  "events": [
+    {
+      "original": "Cell Handheld - Observed",
+      "new_type": "DRIVER_PHONE_USE"
+    },
+    {
+      "original": "Cell Handheld - Distraction",
+      "new_type": "DRIVER_PHONE_USE"
+    },
+    {
+      "original": "Roadway",
+      "new_type": "DRIVER_UNBELTED"
+    },
+    {
+      "original": "Residential Roadway",
+      "new_type": "DRIVER_UNBELTED"
+    },
+    {
+      "original": "Off Identifiable Roadway",
+      "new_type": "DRIVER_UNBELTED"
+    },
+    {
+      "original": "Company Premises",
+      "new_type": "DRIVER_UNBELTED"
+    },
+    {
+      "original": "Parking Lot",
+      "new_type": "DRIVER_UNBELTED"
+    },
+    {
+      "original": "Yard",
+      "new_type": "DRIVER_UNBELTED"
+    },
+    {
+      "original": "Landfill",
+      "new_type": "DRIVER_UNBELTED"
+    },
+    {
+      "original": "Food / Drink - Observed",
+      "new_type": "FOOD_DRINK"
+    },
+    {
+      "original": "Food / Drink - Distraction",
+      "new_type": "FOOD_DRINK"
+    },
+    {
+      "original": "Other Distraction",
+      "new_type": "DRIVER_DISTRACTED"
+    },
+    {
+      "original": "Food or Drink",
+      "new_type": "FOOD_DRINK"
+    },
+    {
+      "original": "Electronic Device - Distraction",
+      "new_type": "DRIVER_PHONE_USE"
+    },
+    {
+      "original": "ER Obstruction",
+      "new_type": "OBSTRUCTION"
+    },
+    {
+      "original": "Collision",
+      "new_type": "ACCIDENT"
+    },
+    {
+      "original": "Cell Hands Free - Distraction",
+      "new_type": "DRIVER_DISTRACTED"
+    },
+    {
+      "original": "Other Communication Device - Observed",
+      "new_type": "DRIVER_PHONE_USE"
+    },
+    {
+      "original": "Other Communication Device - Distraction",
+      "new_type": "DRIVER_PHONE_USE"
+    },
+    {
+      "original": "Electronic Device - Observed",
+      "new_type": "DRIVER_PHONE_USE"
+    },
+    {
+      "original": "Lens Obstruction",
+      "new_type": "OBSTRUCTION"
+    },
+    {
+      "original": "Driver Tagged",
+      "new_type": "DRIVER_TAGGED"
+    },
+    {
+      "original": "Accelerating",
+      "new_type": "ACCELERATION"
+    },
+    {
+      "original": "Falling Asleep",
+      "new_type": "FALLING_ASLEEP"
+    },
+    {
+      "original": "Possible Collision",
+      "new_type": "ACCIDENT"
+    },
+    {
+      "original": "Drowsy",
+      "new_type": "FALLING_ASLEEP"
+    },
+    {
+      "original": "Not on Designated Roadway",
+      "new_type": "UNKNOWN_ROAD"
+    },
+    {
+      "original": "Camera Issue",
+      "new_type": "CAMERA_ISSUE"
+    },
+    {
+      "original": "Suspected Collision",
+      "new_type": "ACCIDENT"
+    },
+    {
+      "original": "Handheld Device",
+      "new_type": "DRIVER_PHONE_USE"
+    },
+    {
+      "original": "No Seat Belt",
+      "new_type": "DRIVER_UNBELTED"
+    },
+    {
+      "original": "Near Collision - Unavoidable",
+      "new_type": "ACCIDENT"
+    }
+  ]
+}

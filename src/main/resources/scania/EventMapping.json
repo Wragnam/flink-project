@@ -1,0 +1,21 @@
+{
+  "source": "SCANIA",
+  "events": [
+    {
+      "original": "HARSH_BRAKE",
+      "new_type": "DEACCELERATION"
+    },
+    {
+      "original": "HARSH_ACCELERATIONS",
+      "new_type": "ACCELERATION"
+    },
+    {
+      "original": "TACHO_TAMPERING",
+      "new_type": "TAMPER"
+    },
+    {
+      "original": "WARNING_SEATBELT_REMINDER",
+      "new_type": "DRIVER_UNBELTED"
+    }
+  ]
+}

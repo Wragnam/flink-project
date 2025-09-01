@@ -1,0 +1,13 @@
+{
+  "source": "UDTRUCKS",
+  "events": [
+    {
+      "original": "SEATBELT_STATUS_WHILE_MOVING_DISENGAGED",
+      "new_type": "DRIVER_UNBELTED"
+    },
+    {
+      "original": "HARSH_ACCELERATION",
+      "new_type": "ACCELERATION"
+    }
+  ]
+}

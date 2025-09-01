@@ -1,0 +1,101 @@
+{
+  "source": "MIX_TELEMATICS",
+  "events": [
+    {
+      "original": "* Panic Alert",
+      "new_type": "Panic"
+    },
+    {
+      "original": "Cargo Door Open",
+      "new_type": "DOOR_OPENED"
+    },
+    {
+      "original": "Cargo Door Closed",
+      "new_type": "DOOR_CLOSED"
+    },
+    {
+      "original": "Driver Door - Open",
+      "new_type": "DOOR_OPENED"
+    },
+    {
+      "original": "Driver Door - Closed",
+      "new_type": "DOOR_CLOSED"
+    },
+    {
+      "original": "Battery disconnection",
+      "new_type": "BATTERY_DISCONNECT"
+    },
+    {
+      "original": "* Low Internal Battery",
+      "new_type": "BATTERY_VOLTAGE_LOW"
+    },
+    {
+      "original": "* Low Battery",
+      "new_type": "BATTERY_VOLTAGE_LOW"
+    },
+    {
+      "original": "Alarm-MiX Vision InCab Camera Tamper Detected(MV)",
+      "new_type": "TAMPER"
+    },
+    {
+      "original": "Alarm-MiX Vision Road Camera Tamper Detected(MV)",
+      "new_type": "TAMPER"
+    },
+    {
+      "original": "Harsh Cornering Right",
+      "new_type": "SHARP_RIGHT"
+    },
+    {
+      "original": "* Harsh Right Cornering",
+      "new_type": "SHARP_RIGHT"
+    },
+    {
+      "original" : "Harsh Cornering Left",
+      "new_type": "SHARP_LEFT"
+    },
+    {
+      "original": "* Harsh Left Cornering",
+      "new_type": "SHARP_LEFT"
+    },
+    {
+      "original": "* Power Disconnected",
+      "new_type": "POWER_DISCONNECT"
+    },
+    {
+      "original": "* Impact Detect Moderate",
+      "new_type": "IMPACT_REGULAR"
+    },
+    {
+      "original": "* Impact Detect Severe",
+      "new_type": "IMPACT_HIGH"
+    },
+    {
+      "original": "Harsh acceleration",
+      "new_type": "ACCELERATION"
+    },
+    {
+      "original": "Harsh braking",
+      "new_type": "DEACCELERATION"
+    },
+    {
+      "original": "MiX Vision: Mobile phone distraction",
+      "new_type": "DRIVER_PHONE_USE"
+    },
+    {
+      "original": "CD - Driver Distracted",
+      "new_type": "DRIVER_DISTRACTED"
+    },
+    {
+      "original": "MiX Vision: Driver distraction",
+      "new_type": "DRIVER_DISTRACTED"
+    },
+    {
+      "original": "Alert - Possible Accident (Decelerated >15km/h/s)",
+      "new_type": "ACCIDENT"
+    },
+    {
+      "original": "MiX Vision: Lens covered",
+      "new_type": "OBSTRUCTION"
+    }
+  ]
+}

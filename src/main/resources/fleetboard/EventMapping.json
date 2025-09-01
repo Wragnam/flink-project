@@ -1,0 +1,33 @@
+{
+  "source": "FLEETBOARD",
+  "events": [
+    {
+      "original": "0",
+      "new_type": "DRIVE_START"
+    },
+    {
+      "original": "1",
+      "new_type": "DRIVE_END"
+    },
+    {
+      "original": "7",
+      "new_type": "IGNITION_ON"
+    },
+    {
+      "original": "8",
+      "new_type": "IGNITION_OFF"
+    },
+    {
+      "original": "79",
+      "new_type": "SPEEDING"
+    },
+    {
+      "original": "90",
+      "new_type": "DOOR_CLOSED"
+    },
+    {
+      "original": "91",
+      "new_type": "DOOR_OPENED"
+    }
+  ]
+}

@@ -1,0 +1,37 @@
+{
+  "source": "THERMOKING",
+  "events": [
+    {
+      "original": "DOORSTATE_CHANGED",
+      "new_type": "DOOR_STATE"
+    },
+    {
+      "original": "LOW_BACKUP_BATTERY",
+      "new_type": "BATTERY_LOW"
+    },
+    {
+      "original": "LOW_BATTERY_VOLTAGE",
+      "new_type": "BATTERY_VOLTAGE_LOW"
+    },
+    {
+      "original": "LOW_FUEL_LEVEL",
+      "new_type": "FUEL_LEVEL_LOW"
+    },
+    {
+      "original": "LOW_MAIN_BATTERY",
+      "new_type": "BATTERY_LOW"
+    },
+    {
+      "original": "MAIN_BATTERY_DISCONNECT",
+      "new_type": "BATTERY_DISCONNECT"
+    },
+    {
+      "original": "SET_POINT_NOT_ENTERED",
+      "new_type": "SET_POINT_NOT_ENTERED"
+    },
+    {
+      "original": "SETPOINT_CHANGED",
+      "new_type": "SET_POINT_CHANGED"
+    }
+  ]
+}
