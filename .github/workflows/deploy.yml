@@ -21,7 +21,9 @@ jobs:
 
       - name: Copy JAR and deploy script to VM
         run: |
-          scp -i ${{ secrets.SSH_KEY }} -P 2222 target/all-1.2.2.jar ci/deploy.sh \
+          echo "${{ secrets.SSH_KEY }}" > temp_key.pem
+          chmod 600 temp_key.pem
+          scp -i temp_key.pem -P 2222 target/all-1.2.2.jar ci/deploy.sh \
             ${{ secrets.SSH_USER }}@host.docker.internal:/opt/deploy/flink/
 
       - name: Run deploy script on VM
