@@ -28,7 +28,7 @@ jobs:
           key: ${{ secrets.SSH_KEY }}
           script: |
              mkdir -p /opt/deploy/flink
-             cp ./build/libs/all-1.2.2.jar /opt/deploy/flink/
+             cp ./target/all-1.2.2.jar /opt/deploy/flink/
              cd /opt/deploy/flink
              chmod +x ci/deploy.sh
              ./ci/deploy.sh uat blue
